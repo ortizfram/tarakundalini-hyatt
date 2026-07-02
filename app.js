@@ -39,6 +39,17 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 updateProgress();
 
 if (playOverlay && walkthroughVideo) {
+  const attemptAutoplay = async () => {
+    try {
+      await walkthroughVideo.play();
+      videoFrame?.classList.add("is-playing");
+    } catch (error) {
+      console.warn("Autoplay blocked, waiting for manual play", error);
+    }
+  };
+
+  attemptAutoplay();
+
   playOverlay.addEventListener("click", async () => {
     try {
       videoFrame?.classList.add("is-playing");

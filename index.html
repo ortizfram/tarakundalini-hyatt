@@ -184,8 +184,10 @@
             <video
               id="walkthroughVideo"
               src="./assets/video/platform-walkthrough.mov"
-              poster="./assets/photos/wellness-detail.png"
-              preload="metadata"
+              preload="auto"
+              autoplay
+              muted
+              loop
               playsinline
             ></video>
             <button class="play-overlay" id="playOverlay" type="button" aria-label="Reproducir walkthrough">
@@ -193,7 +195,7 @@
                 <path d="M41 68C42 42 64 29 88 28C120 26 148 46 153 75C158 104 140 136 107 144C70 153 39 126 41 68Z" />
                 <path d="M75 64L117 90L75 116Z" />
               </svg>
-              <span>Play</span>
+              <span>Video</span>
             </button>
           </div>
           <p class="video-caption">
