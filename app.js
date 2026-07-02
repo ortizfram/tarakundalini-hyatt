@@ -3,6 +3,7 @@ const revealTargets = document.querySelectorAll("[data-reveal], .draw-line, .pla
 const walkthroughVideo = document.getElementById("walkthroughVideo");
 const playOverlay = document.getElementById("playOverlay");
 const videoFrame = document.querySelector(".video-frame");
+const SITE_ORIGIN = "https://ortizfram.github.io/tarakundalini-hyatt";
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -88,4 +89,10 @@ document.querySelectorAll("a[href^='#']").forEach((link) => {
     event.preventDefault();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
+});
+
+document.querySelectorAll('img[src^="./assets/"], video[src^="./assets/"]').forEach((element) => {
+  const rawSrc = element.getAttribute("src");
+  if (!rawSrc) return;
+  element.src = `${SITE_ORIGIN}/${rawSrc.replace(/^\.\/?/, "")}`;
 });
