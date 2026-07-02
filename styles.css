@@ -1160,6 +1160,13 @@ textarea {
   padding-bottom: 2rem;
 }
 
+.integration-section {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
 .contact-highlight {
   margin-top: 1.4rem;
   padding: 1rem 1.1rem;
@@ -1189,6 +1196,58 @@ textarea {
   gap: 1rem;
   padding: 1rem;
   border-radius: 30px;
+}
+
+.integration-panel {
+  display: grid;
+  padding: 1rem;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 241, 207, 0.74)),
+    radial-gradient(circle at top left, rgba(255, 206, 79, 0.18), transparent 36%);
+  border: 1px solid rgba(25, 37, 88, 0.1);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.integration-panel.alt {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(232, 197, 122, 0.2)),
+    radial-gradient(circle at top right, rgba(209, 157, 75, 0.16), transparent 38%);
+}
+
+.integration-placeholder {
+  min-height: 360px;
+  padding: 1.4rem;
+  border-radius: 26px;
+  display: grid;
+  align-content: center;
+  gap: 0.8rem;
+  border: 1.5px dashed rgba(25, 37, 88, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 236, 0.92)),
+    linear-gradient(135deg, rgba(255, 206, 79, 0.1), rgba(232, 197, 122, 0.08));
+}
+
+.integration-placeholder.alt {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 245, 215, 0.92)),
+    linear-gradient(135deg, rgba(209, 157, 75, 0.12), rgba(255, 206, 79, 0.08));
+}
+
+.integration-placeholder strong {
+  color: var(--navy);
+  font-family: "Space Grotesk", "Manrope", sans-serif;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.integration-placeholder p {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--muted);
+  line-height: 1.65;
 }
 
 .phone-card {
@@ -1305,6 +1364,7 @@ textarea {
 @media (max-width: 1180px) {
   .hero,
   .authority-section,
+  .integration-section,
   .contact-section,
   .two-col {
     grid-template-columns: 1fr;
@@ -1323,6 +1383,7 @@ textarea {
   .timeline-grid,
   .avatar-row,
   .authority-list,
+  .integration-section,
   .objection-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
