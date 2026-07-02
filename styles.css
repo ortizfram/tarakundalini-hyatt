@@ -246,30 +246,34 @@ textarea {
   padding: clamp(1rem, 2vw, 2rem) 0;
 }
 
-.brand-row {
+.brand-stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.hero-title-row {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
 }
 
-.brand-placeholder {
-  display: grid;
-  place-items: center;
-  width: 84px;
+.project-face {
+  flex: 0 0 auto;
+  width: 96px;
   aspect-ratio: 1;
-  border-radius: 24px;
-  border: 2px dashed rgba(25, 37, 88, 0.22);
-  background: rgba(255, 255, 255, 0.82);
-  font-family: "Caveat", cursive;
-  font-size: 2rem;
-  color: var(--navy);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.82);
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(25, 37, 88, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 30px rgba(25, 37, 88, 0.14);
 }
 
-.brand-stack {
-  display: grid;
-  gap: 0.55rem;
+.project-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
 }
 
 .eyebrow,
@@ -306,6 +310,11 @@ textarea {
 
 .mini-logo-hyatt {
   height: 42px;
+}
+
+.mini-logo-hyatt,
+.wordmark img {
+  background: transparent;
 }
 
 .hero h1,
@@ -1349,6 +1358,14 @@ textarea {
   .hero h1 {
     max-width: none;
     font-size: clamp(2.8rem, 14vw, 4.2rem);
+  }
+
+  .hero-title-row {
+    align-items: flex-start;
+  }
+
+  .project-face {
+    width: 82px;
   }
 
   .hero h1 span {
